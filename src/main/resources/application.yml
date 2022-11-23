@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo-spring-graphql
+  data:
+    mongodb.uri: mongodb://demo:demo@localhost:27017/demo-db
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG

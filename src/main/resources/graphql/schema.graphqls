@@ -1,0 +1,35 @@
+type Channel {
+    id: ID!
+    title: String!
+    author: String!
+    recommendations: [Recommendation!]!
+}
+
+type ChannelIn {
+    title: String!
+}
+
+type Recommendation {
+    movie: Movie!
+    text: String!
+}
+
+type Movie {
+    id: ID!
+    title: String!
+    rating: Int!
+    thumbnail: String
+}
+
+# The Root Query for the application
+type Query {
+    channels: [Channel]
+    channel(id: ID!): Channel
+    movie(id: ID!): Movie
+}
+
+# The Root Mutation for the application
+type Mutation {
+    addChannel(title: String!) : Channel
+    addRecommendation(channelId: ID!, movieId: ID!, text: String): Recommendation
+}
